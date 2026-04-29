@@ -1,0 +1,94 @@
+/* ===== KEYFRAMES ===== */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes float {
+  0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)}
+}
+@keyframes blob-morph {
+  0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(0deg) scale(1); }
+  25%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: rotate(90deg) scale(1.05); }
+  50%     { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; transform: rotate(180deg) scale(0.97); }
+  75%     { border-radius: 60% 40% 60% 30% / 60% 40% 50% 60%; transform: rotate(270deg) scale(1.03); }
+}
+@keyframes scroll-bounce {
+  0%,100%{transform:translateY(0);opacity:1} 50%{transform:translateY(10px);opacity:0.4}
+}
+@keyframes fadeInUp {
+  from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeInLeft {
+  from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)}
+}
+@keyframes fadeInRight {
+  from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)}
+}
+@keyframes pulse-glow {
+  0%,100%{box-shadow:0 0 20px rgba(124,58,237,0.3)}
+  50%{box-shadow:0 0 60px rgba(124,58,237,0.6)}
+}
+@keyframes shimmer {
+  0%{background-position:-200% 0} 100%{background-position:200% 0}
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0; transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ===== HERO ANIMATIONS ===== */
+.hero-greeting { animation: fadeInUp 0.8s ease 0.1s both; }
+.hero-name { animation: fadeInUp 0.8s ease 0.2s both; }
+.hero-title-wrapper { animation: fadeInUp 0.8s ease 0.3s both; }
+.hero-desc { animation: fadeInUp 0.8s ease 0.4s both; }
+.hero-cta { animation: fadeInUp 0.8s ease 0.5s both; }
+.hero-socials { animation: fadeInUp 0.8s ease 0.6s both; }
+.hero-visual { animation: fadeInRight 0.8s ease 0.3s both; }
+
+/* ===== CARD HOVER GLOW ===== */
+.project-card:hover { animation: pulse-glow 2s infinite; }
+
+/* ===== SKELETON LOADING ===== */
+.skeleton {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.05) 25%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* ===== STAGGER ANIMATION FOR CARDS ===== */
+.skills-grid .skill-card:nth-child(1) { transition-delay: 0.1s; }
+.skills-grid .skill-card:nth-child(2) { transition-delay: 0.15s; }
+.skills-grid .skill-card:nth-child(3) { transition-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(4) { transition-delay: 0.25s; }
+.skills-grid .skill-card:nth-child(5) { transition-delay: 0.3s; }
+.skills-grid .skill-card:nth-child(6) { transition-delay: 0.35s; }
+
+.projects-grid .project-card:nth-child(1) { transition-delay: 0.1s; }
+.projects-grid .project-card:nth-child(2) { transition-delay: 0.2s; }
+.projects-grid .project-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* ===== GRADIENT TEXT ANIMATE ===== */
+.section-title {
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+}
+@keyframes gradient-shift {
+  0%{background-position:0% center}
+  50%{background-position:100% center}
+  100%{background-position:0% center}
+}
